@@ -51,7 +51,6 @@ def get_filters():
         if month not in months and month != 'all':
             print("The selected month is not valid.\n")
 
-
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
     while(day not in weekdays and day != 'all'):
@@ -74,7 +73,6 @@ def get_filters():
         if day not in weekdays and day != 'all':
             print("The selected day is not valid.\n")
     
-
     print('-'*40)
     return city, month, day
 
