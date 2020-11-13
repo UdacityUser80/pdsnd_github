@@ -51,7 +51,6 @@ def get_filters():
         if month not in months and month != 'all':
             print("The selected month is not valid.\n")
 
-
     # get user input for day of week (all, monday, tuesday, ... sunday)
     day = ''
     while(day not in weekdays and day != 'all'):
@@ -74,7 +73,6 @@ def get_filters():
         if day not in weekdays and day != 'all':
             print("The selected day is not valid.\n")
     
-
     print('-'*40)
     return city, month, day
 
@@ -103,7 +101,6 @@ def load_data(city, month, day):
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-
 
     # filter by month if applicable
     if month != 'all':
@@ -145,7 +142,6 @@ def time_stats(df):
     hour_mode = df['start_hour'].mode()[0]
     print("The most common day of week is {}.".format(hour_mode))
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -173,7 +169,6 @@ def station_stats(df):
     travel_mode = df['travel'].mode()[0]
     print("The most frequent combination of start station and end station trip is {}.".format(travel_mode))
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -195,7 +190,6 @@ def trip_duration_stats(df):
     # display mean travel time
     trip_duration_mean = df['Trip Duration'].mean()
     print("The mean travel time is {} seconds.".format(trip_duration_mean))
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -237,7 +231,6 @@ def user_stats(df):
         print("The most common year of birth is {}".format(int(birth_years.mode()[0])))
     else:
         print("No year of birth data available")
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
