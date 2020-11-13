@@ -142,7 +142,6 @@ def time_stats(df):
     hour_mode = df['start_hour'].mode()[0]
     print("The most common day of week is {}.".format(hour_mode))
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -170,7 +169,6 @@ def station_stats(df):
     travel_mode = df['travel'].mode()[0]
     print("The most frequent combination of start station and end station trip is {}.".format(travel_mode))
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -192,7 +190,6 @@ def trip_duration_stats(df):
     # display mean travel time
     trip_duration_mean = df['Trip Duration'].mean()
     print("The mean travel time is {} seconds.".format(trip_duration_mean))
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -234,7 +231,6 @@ def user_stats(df):
         print("The most common year of birth is {}".format(int(birth_years.mode()[0])))
     else:
         print("No year of birth data available")
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
